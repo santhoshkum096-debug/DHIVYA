@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalEase - AI Legal Document Generator</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="brand">LegalEase</div>
+    <div class="tagline">AI-Powered Legal Document Drafting</div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>Create Legal Documents with AI</h1>
+        <p>Enter your agreement details, generate a draft, edit it, and export it.</p>
+    </section>
+
+    <div id="status" class="status"></div>
+
+    <section class="grid">
+        <div class="card">
+            <h2>Document Details</h2>
+            <form id="documentForm">
+                <label>Document Type</label>
+                <select id="document_type" required>
+                    <option value="Employment Contract">Employment Contract</option>
+                    <option value="Non-Disclosure Agreement (NDA)">Non-Disclosure Agreement (NDA)</option>
+                    <option value="Lease Agreement">Lease Agreement</option>
+                    <option value="Service Agreement">Service Agreement</option>
+                    <option value="Custom Legal Document">Custom Legal Document</option>
+                </select>
+
+                <label>Party 1</label>
+                <input id="party_one" placeholder="Company / Person name" required>
+
+                <label>Party 2</label>
+                <input id="party_two" placeholder="Employee / Tenant / Client name" required>
+
+                <label>Effective Date</label>
+                <input id="effective_date" type="date" required>
+
+                <label>Jurisdiction</label>
+                <input id="jurisdiction" placeholder="Example: Chennai, Tamil Nadu, India" required>
+
+                <label>Main Terms & Conditions</label>
+                <textarea id="terms" rows="7" placeholder="Enter salary, rent, services, confidentiality, payment terms, responsibilities, etc." required></textarea>
+
+                <label>Additional Details</label>
+                <textarea id="additional_details" rows="5" placeholder="Optional details"></textarea>
+
+                <button type="submit" id="generateBtn">Generate Document</button>
+            </form>
+        </div>
+
+        <div class="card editor-card">
+            <div class="editor-head">
+                <h2>Editable Preview</h2>
+                <div class="actions">
+                    <button class="secondary" onclick="downloadFile('txt')">TXT</button>
+                    <button class="secondary" onclick="downloadFile('docx')">DOCX</button>
+                    <button class="secondary" onclick="downloadFile('pdf')">PDF</button>
+                </div>
+            </div>
+            <textarea id="documentContent" class="editor" placeholder="Your generated document will appear here..."></textarea>
+        </div>
+    </section>
+
+    <section class="notice">
+        <strong>Important:</strong> LegalEase creates AI-generated drafts. Have important documents reviewed by a qualified legal professional before signing or relying on them.
+    </section>
+</main>
+
+<footer>
+    LegalEase &copy; 2026 | Generative AI Legal Document Drafting Platform
+</footer>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

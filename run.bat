@@ -1,0 +1,2 @@
+python -m uvicorn backend.main:app--port 8002
+
